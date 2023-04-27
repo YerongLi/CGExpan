@@ -86,7 +86,7 @@ class CGExpan(object):
 
     def expand(self, query_set, target_size, m=2, gt=None):
 
-        print('start expanding: ' + str([self.eid2name[eid] for eid in query_set]))
+        logging.info('start expanding: ' + str([self.eid2name[eid] for eid in query_set]))
 
         start_time = time.time()
         
