@@ -112,7 +112,14 @@ class CGExpan(object):
 
             cname2count = self.class_name_generation(set_text)
             logging.info('cname2count')
-            logging.info(cname2count)
+            # logging.info(cname2count)
+            # INFO:root:cname2count
+            # INFO:root:defaultdict(<class 'int'>, {'areas': 17, 'countries': 6, 'states': 36, 'small places': 4, 'southern states': 25, 'small areas': 6, 'small states': 6, 'large areas': 4, 'places': 12, 'european countries': 4, 'eu countries': 2, 'similar locations': 3, 'developed countries': 3, 'locations': 6, 'geographical locations': 2, 'coastal areas': 7, 'similar places': 6, 'northern states': 2, 'geographic areas': 2, 'european places': 2, 'eastern states': 4, 'northern areas': 5, 'europes': 2, 'many usas': 2, 'usas': 6, 'exotic places': 3, 'coastal states': 7, 'species': 2, 'plant species': 2, 'southern locations': 4, 'native species': 2, 'coastal locations': 3, 'desert areas': 1, 'regional locations': 2, 'exotic locations': 1, 'see examples': 1, 'examples': 1, 'foreign countries': 1, 'mountainous areas': 1, 'souths': 1, 'deep souths': 1, 'coas
+            # tal regions': 1, 'regions': 2, 'border areas': 2, 'illinois': 1, 'several states': 2, 'border regions': 1, 'commonwealth countries': 1, 'metropolitan areas': 1, 'asian countries': 1, 'eastern texa': 2, 'western states': 1, 'southern texa': 2, 'texa': 2, 'geographic locations': 1, 'so
+            # utheastern states': 1, 'northern locations': 1})
+            # INFO:root:cname2count
+
+            logging.info(len(cname2count))
             pos_cname, neg_cnames = self.class_name_ranking(cname2count, query_set, expanded_set, neg_cnames, prev_cn, margin)
             prev_cn.add(pos_cname)
 
