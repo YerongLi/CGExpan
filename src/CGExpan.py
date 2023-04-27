@@ -101,9 +101,9 @@ class CGExpan(object):
         
         while len(expanded_set) < target_size:
             
-            print(f'num of expanded entities: {len(expanded_set)}, time: {int((time.time() - start_time)/60)} min {int(time.time() - start_time)%60} sec')
+            logging.info(f'num of expanded entities: {len(expanded_set)}, time: {int((time.time() - start_time)/60)} min {int(time.time() - start_time)%60} sec')
             if gt is not None:
-                print(f'map10: {apk(gt, expanded_set, 10)}, map20: {apk(gt, expanded_set, 20)}, map50: {apk(gt, expanded_set, 50)}')
+                logging.info(f'map10: {apk(gt, expanded_set, 10)}, map20: {apk(gt, expanded_set, 20)}, map50: {apk(gt, expanded_set, 50)}')
 
 
             # generate class names
@@ -119,7 +119,16 @@ class CGExpan(object):
             # utheastern states': 1, 'northern locations': 1})
             # INFO:root:cname2count
 
-            logging.info(len(cname2count))
+            # logging.info(len(cname2count))
+            # INFO:root:start expanding: ['texas', 'florida', 'california']
+            # INFO:root:cname2count
+            # INFO:root:28
+            # INFO:root:cname2count
+            # INFO:root:49
+            # INFO:root:start expanding: ['iowa', 'illinois', 'new jersey']
+            # INFO:root:cname2count
+            # INFO:root:24
+
             pos_cname, neg_cnames = self.class_name_ranking(cname2count, query_set, expanded_set, neg_cnames, prev_cn, margin)
             prev_cn.add(pos_cname)
 
@@ -246,6 +255,8 @@ class CGExpan(object):
                         if len(indices) == 3:
                             break
                 fill_in = [self.tokenizer.mask_token] + [set_text[i] for i in indices]
+                logging.info('fill_in')
+                logging.info(self.tokenizer.decode(fill_in))
                 fill_in = np.random.permutation(fill_in)
                 text = template[0] + pos_cname + template[1]
                 text = text.format(*fill_in)
