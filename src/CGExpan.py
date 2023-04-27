@@ -270,9 +270,20 @@ class CGExpan(object):
                 text = text.format(*fill_in)
                 logging.info('text')
                 logging.info(text)
+                # INFO:root:text
+                # INFO:root:[MASK] , florida , texas , california or other states .
+                # INFO:root:text
+                # INFO:root:[MASK] , california , florida , texas and other states .
+                # INFO:root:text
+                # INFO:root:states including texas , [MASK] , florida , and california .
+                # INFO:root:text
+                # INFO:root:states , especially florida , california , texas , and [MASK] .
+                # INFO:root:text
+                # INFO:root:states such as [MASK] , texas , florida , and california .
                 ids.append(self.tokenizer.encode(text, max_length=512))
         mask_rep = self.get_mask_rep(ids)
-
+        logging.info('length')
+        logging.info(len(ids))
         eid2mrr = ddict(float)
         for local_rep in mask_rep:
             indices = []
