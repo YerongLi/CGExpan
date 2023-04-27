@@ -111,7 +111,7 @@ class CGExpan(object):
             set_text = [self.eid2name[q].lower() for q in query_set + expanded_set]
 
             cname2count = self.class_name_generation(set_text)
-            logging.info('cname2count')
+            # logging.info('cname2count')
             # logging.info(cname2count)
             # INFO:root:cname2count
             # INFO:root:defaultdict(<class 'int'>, {'areas': 17, 'countries': 6, 'states': 36, 'small places': 4, 'southern states': 25, 'small areas': 6, 'small states': 6, 'large areas': 4, 'places': 12, 'european countries': 4, 'eu countries': 2, 'similar locations': 3, 'developed countries': 3, 'locations': 6, 'geographical locations': 2, 'coastal areas': 7, 'similar places': 6, 'northern states': 2, 'geographic areas': 2, 'european places': 2, 'eastern states': 4, 'northern areas': 5, 'europes': 2, 'many usas': 2, 'usas': 6, 'exotic places': 3, 'coastal states': 7, 'species': 2, 'plant species': 2, 'southern locations': 4, 'native species': 2, 'coastal locations': 3, 'desert areas': 1, 'regional locations': 2, 'exotic locations': 1, 'see examples': 1, 'examples': 1, 'foreign countries': 1, 'mountainous areas': 1, 'souths': 1, 'deep souths': 1, 'coas
@@ -287,8 +287,22 @@ class CGExpan(object):
         # INFO:root:length
         # INFO:root:18
 
-        logging.info('mask_rep')
-        logging.info(mask_rep)
+        # logging.info(mask_rep)
+        # INFO:root:mask_rep
+        # INFO:root:[[-0.02163155  0.08432811 -0.11579558 ... -0.15900703 -0.05456618
+        #   -0.12115346]
+        #  [ 0.07413231  0.19879022 -0.11666524 ... -0.15382662  0.03588961
+        #   -0.12604576]
+        #  [ 0.02818201  0.06998995 -0.28485173 ... -0.03825528  0.00897471
+        #   -0.0417298 ]
+        #  ...
+        #  [ 0.05698122  0.21749909 -0.07018307 ... -0.2447705   0.00188999
+        #   -0.07645971]
+        #  [ 0.02078669  0.08932656 -0.1914087  ... -0.13100626  0.02239787
+        #   -0.24592625]
+        #  [-0.23963006  0.18225236  0.08653576 ... -0.19262496  0.1368391
+        #   -0.03403295]]
+
 
         eid2mrr = ddict(float)
         for local_rep in mask_rep:
@@ -302,6 +316,8 @@ class CGExpan(object):
             this_global_score_ranking = np.argsort(-this_global_score)
 
             this_keywords = [self.keywords[i] for i in this_global_score_ranking[:500]]
+            logging.info('this_keywords')
+            logging.info(this_keywords)
             this_global_score = [this_global_score[i] for i in this_global_score_ranking[:500]]
             this_embs = [self.get_emb(i) for i in [self.eid2idx[eid] for eid in this_keywords]]
             this_entity_pos = [0] + list(np.cumsum([len(emb) for emb in this_embs]))
