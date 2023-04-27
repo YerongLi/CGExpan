@@ -386,8 +386,23 @@ class CGExpan(object):
         for i, eid in enumerate(eid_rank):
             if eid2mrr[eid] < EXPANSION_SAMPLE_SIZE * len(self.expansion_templates) * 0.2:
                 break
-        logging.info('logging eid_rank')
-        logging.info(self.tokenizer.decode(eid_rank[:max(5, i)]))
+        # logging.info('logging eid_rank')
+        # logging.info(self.tokenizer.decode(eid_rank[:max(5, i)]))
+        # INFO:root:num of expanded entities: 0, time: 0 min 0 sec
+        # INFO:root:map10: 0.0, map20: 0.0, map50: 0.0
+        # INFO:root:logging eid_rank
+        # INFO:root:[UNK] tasmania [UNK] britain [unused254]
+        # INFO:root:num of expanded entities: 5, time: 0 min 23 sec
+        # INFO:root:map10: 0.5, map20: 0.25, map50: 0.1
+        # INFO:root:logging eid_rank
+        # INFO:root:tyne positioning [UNK] [UNK] [UNK] helicopters
+        # INFO:root:start expanding: ['kentucky', 'wisconsin', 'maryland']
+        # INFO:root:num of expanded entities: 0, time: 0 min 0 sec
+        # INFO:root:map10: 0.0, map20: 0.0, map50: 0.0
+        # INFO:root:logging eid_rank
+        # INFO:root:[UNK] island positioning calhoun [UNK] [UNK] version
+        # INFO:root:num of expanded entities: 7, time: 0 min 23 sec
+
         return eid_rank[:max(5, i)]
 
     def class_guided_filter(self, query_set, expanded_set, pos_cname, neg_cnames, cname2count):
