@@ -387,6 +387,7 @@ class CGExpan(object):
             if eid2mrr[eid] < EXPANSION_SAMPLE_SIZE * len(self.expansion_templates) * 0.2:
                 break
         logging.info('logging eid_rank')
+        logging.info(eid_rank[:max(5, i)])
         return eid_rank[:max(5, i)]
 
     def class_guided_filter(self, query_set, expanded_set, pos_cname, neg_cnames, cname2count):
