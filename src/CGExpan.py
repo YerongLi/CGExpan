@@ -256,7 +256,7 @@ class CGExpan(object):
                             break
                 fill_in = [self.tokenizer.mask_token] + [set_text[i] for i in indices]
                 logging.info('fill_in')
-                logging.info(self.tokenizer.decode(fill_in))
+                logging.info(fill_in)
                 fill_in = np.random.permutation(fill_in)
                 text = template[0] + pos_cname + template[1]
                 text = text.format(*fill_in)
