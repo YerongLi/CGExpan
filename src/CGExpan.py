@@ -323,11 +323,34 @@ class CGExpan(object):
             # INFO:root:this_keywords
             # INFO:root:[12400, 22982, 19129, 79092, 1371, 39817, 1807, 50103, 259, 1978, 19214, 12380, 73219, 55857, 48157, 79187, 73148, 48156, 2479, 34957, 2109, 66993, 80218, 254
             
-            logging.info('this_keywords')
-            logging.info(self.tokenizer.decode(this_keywords))
+            # logging.info('this_keywords')
+            # logging.info(self.tokenizer.decode(this_keywords))
+            # INFO:root:this_keywords
+            # INFO:root:helicopters calhoun encompassing [UNK] <E0><A6><AF> [UNK] <E5><A3><AB> [UNK] [unused254] <E9><A3><9F> ismailnta [UNK] [UNK] [UNK] [U
+            # NK] [UNK] [UNK] island [UNK] used [UNK] [UNK] version [UNK] [UNK] improvised [UNK] tyne [UNK] britain [UNK] [UNK] lucille tasmania westphalia 
+            # [UNK] positioning governed noted [UNK] shell [UNK] [UNK] springplex [UNK] mbe hermann jerked botanist churchill [UNK]mith 153 famously liu fli
+            # cked appear colonies releasing slower<E3><80><8E> warlord optimism southeastern examined jumping <E6><89><8B> [UNK] claimed [UNK] [UNK] [UNK] 
+            # [UNK] chairman murmur [UNK] [UNK] <E0><B7><80> scala dresser injection <E2><88><9A> [UNK] propose dashed [UNK] [UNK] mysterious [UNK] gag [UNK
+            # ] [UNK] [UNK] intensified [UNK] [UNK] stefan [UNK] [UNK] [UNK] [UNK] parkinsonony [UNK]ieu unidentified [UNK] [UNK] [UNK] [UNK]taking [UNK] di
+            # sabled wellness [UNK] [UNK] torch informal [UNK] germans [UNK] [UNK] randy instruction substituted<D8><B7> olympus [UNK] districts accents [UN
+            # K] [UNK] [UNK]dling [UNK] [UNK] [UNK] pens norma [UNK] [UNK]bil [UNK] [UNK]piration cornelius [UNK] [UNK] [UNK] [UNK] dog partly [UNK] resulta
+            # nt [UNK] [UNK] wrapped gong squirrel large [UNK]ian [UNK] invertedylesphile [UNK] collaborated 1609 [UNK] [UNK] scholarly [UNK] [UNK] numerica
+            # l viable [UNK] [UNK]game [UNK] eel collided snout [UNK] [UNK] zion [UNK] teller [UNK] [UNK] olympics regal goal [UNK] [UNK] windy [UNK] [UNK] 
+            # [UNK] [UNK] hughes [UNK] [UNK] excitement [UNK] [UNK] [UNK] [UNK] [UNK] [UNK] faced [UNK] [UNK] [UNK] [UNK] perfection anna [UNK]ined [UNK] an
+            # ya index pine globally [UNK] [UNK] ceylon [UNK] [UNK] [UNK]sity canary [UNK] [UNK]14mahrzburg [UNK]cca ports [UNK] mercedes served [UNK] commu
+            # nicate [UNK] [UNK] formulas [UNK] sergio [UNK] [UNK] usage [UNK]aba [UNK] impacts [UNK] jason [UNK] [UNK] [UNK] [UNK] [UNK] [UNK] forms [UNK] 
+            # [UNK] [UNK] newly<E0><BD><94> tori yourselves limb forearms [UNK] [UNK] clapton [UNK] azerbaijan [UNK] <E0><A6><9F> [UNK] [UNK] gestured [UNK]
+            #  [UNK]ings [UNK] [UNK] [UNK] centre tag [UNK] [UNK] [UNK] [UNK]wife [UNK] trey [UNK]<E0><B9><80> corpses [UNK] 1985 [UNK] julien [UNK] vertically [UNK] [UNK] [UNK] [UNK] [UNK] [UNK] husky [UNK]oper rutherford [UNK] [UNK] [UNK] americana increases [UNK] [unused478]iter martinique [UNK] blank emergency [UNK] inhaled [UNK] braking [UNK] [UNK] [UNK] [UNK] [UNK] [UNK] resignation [UNK] 1000 [UNK] [UNK] [UNK] [UNK] [UNK] [UNK] [UNK] [UNK] [UNK] elements brilliant [UNK] [UNK] [UNK] [UNK] [UNK] emigrated [UNK] [UNK] [UNK] sizes prosecutor [UNK] [UNK] [UNK] [UNK] snow [UNK] stripe con [UNK] [UNK] [UNK]word pot [unused131] trumpeter [UNK] [UNK] [UNK] [UNK] soxmore [UNK] chatter [UNK] 5th broadcasting erica notes pedal jobs [UNK] [UNK]wil bless [UNK] [UNK] [UNK] [UNK] [UNK] [unused123]ivo guinea [UNK] [UNK] bigger frances [UNK] palaces [UNK] pencil [UNK] [UNK] mojo electronic starvation [UNK] [UNK] scrapped<E0><A4><89> [unused444] [UNK] [UNK] [UNK] leaned [UNK]uto professionals [UNK] [unused959] [UNK]luijmins [UNK] [UNK]ochecano elitesshu [UNK] [UNK] [UNK] [UNK] cattle commanded [UNK] [UNK] [UNK] elevated maddie [UNK] [UNK]board [UNK] [UNK] [UNK]$ courage [UNK] [UNK] [UNK] [UNK] feddue [UNK] entering [UNK] haute chambers [UNK] flickering imposed [UNK] [UNK] [UNK] piracy rt [UNK] [UNK] bloomberg [UNK] [UNK] abused [UNK]yx sheppard [UNK]gens hate [UNK] deny [UNK]
+            # INFO:root:this_keywords
+            # INFO:root:helicopters calhoun encompassing [UNK] <E0><A6><AF> [UNK] <E5><A3><AB> [UNK] [unused254] <E9><A3><9F> ismailnta [UNK] [UNK] [UNK] [UNK] [UNK] [UNK] island [UNK] used [UNK] [UNK] version [UNK] [UNK] improvised [UNK] tyne [UNK] britain [UNK] [UNK] lucille tasmania westphalia [UNK] positioning governed noted [UNK] shell [UNK] [UNK] springplex [UNK] mbe hermann jerked botanist churchill [UNK]mith 153 famously liu flicked appear colonies releasing slower<E3><80><8E> warlord optimism southeastern examined jumping <E6><89><8B> [UNK] claimed [UNK] [UNK] [UNK] 
+            # [UNK] chairman murmur [UNK] [UNK] <E0><B7><80> scala dresser injection <E2><88><9A> [UNK] propose dashed [UNK] [UNK] mysterious [UNK] gag [UNK
+            # ] [UNK] [UNK] intensified [UNK] [UNK] stefan [UNK] [UNK] [UNK] [UNK] parkinsonony [UNK]ieu unidentified [UNK] [UNK] [UNK] [UNK]taking [UNK] di
+            # sabled wellness [UNK] [UNK] torch informal [UNK] germans [UNK] [UNK] randy instruction substituted<D8><B7> olympus [UNK] districts accents [UNK] [UNK] [UNK]dling [UNK] [UNK] [UNK] pens norma [UNK] [UNK]bil [UNK] [UNK]piration cornelius [UNK] [UNK] [UNK] [U
             this_global_score = [this_global_score[i] for i in this_global_score_ranking[:500]]
             this_embs = [self.get_emb(i) for i in [self.eid2idx[eid] for eid in this_keywords]]
             this_entity_pos = [0] + list(np.cumsum([len(emb) for emb in this_embs]))
+            logging.info('this_entity_pos')
+            logging.info(this_entity_pos)
             this_embs = np.vstack(this_embs)
             
             raw_local_scores = cos(local_rep[np.newaxis, :], this_embs)[0]
