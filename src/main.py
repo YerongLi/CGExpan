@@ -44,7 +44,8 @@ if __name__ == '__main__':
                     gt.add(eid)
 
         for i, query_set in enumerate(query_sets):
-            expanded = cgexpan.expand(query_set, 50, args.m, gt)
+            # expanded = cgexpan.expand(query_set, 50, args.m, gt)
+            expanded = cgexpan.expand(query_set, 10, args.m, gt)
             with open(os.path.join(args.dataset, args.output, f'{i}_{file}'), 'w') as f:
                 print(apk(gt, expanded, 10), file=f)
                 print(apk(gt, expanded, 20), file=f)
