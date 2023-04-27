@@ -324,7 +324,7 @@ class CGExpan(object):
             # INFO:root:[12400, 22982, 19129, 79092, 1371, 39817, 1807, 50103, 259, 1978, 19214, 12380, 73219, 55857, 48157, 79187, 73148, 48156, 2479, 34957, 2109, 66993, 80218, 254
             
             logging.info('this_keywords')
-            logging.info(tokenizer.decode(this_keywords))
+            logging.info(self.tokenizer.decode(this_keywords))
             this_global_score = [this_global_score[i] for i in this_global_score_ranking[:500]]
             this_embs = [self.get_emb(i) for i in [self.eid2idx[eid] for eid in this_keywords]]
             this_entity_pos = [0] + list(np.cumsum([len(emb) for emb in this_embs]))
