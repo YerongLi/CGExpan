@@ -7,7 +7,13 @@ import argparse
 from utils import *
 from CGExpan import *
 
+import logging
 
+logging.basicConfig(filename='output.log', level=logging.DEBUG)
+formatter = logging.Formatter('[%(asctime)s] p%(process)s {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s','%m-%d %H:%M:%S')
+
+log = logging.getLogger(__name__)
+log.info(f'Logger start: {os.uname()[1]}')
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-dataset', required=True, help='path to dataset folder')

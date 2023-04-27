@@ -14,6 +14,7 @@ import pickle
 from utils import *
 import time
 
+import logging
 GENERATION_SAMPLE_SIZE = 6
 EXPANSION_SAMPLE_SIZE = 3
 POS_CNAME_THRES = 5./6
@@ -110,7 +111,8 @@ class CGExpan(object):
             set_text = [self.eid2name[q].lower() for q in query_set + expanded_set]
 
             cname2count = self.class_name_generation(set_text)
-
+            logging.info('cname2count')
+            logging.info(cname2count)
             pos_cname, neg_cnames = self.class_name_ranking(cname2count, query_set, expanded_set, neg_cnames, prev_cn, margin)
             prev_cn.add(pos_cname)
 
