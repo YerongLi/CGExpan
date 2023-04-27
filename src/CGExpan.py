@@ -255,11 +255,21 @@ class CGExpan(object):
                         if len(indices) == 3:
                             break
                 fill_in = [self.tokenizer.mask_token] + [set_text[i] for i in indices]
-                logging.info('fill_in')
-                logging.info(fill_in)
+                # logging.info('fill_in')
+                # logging.info(fill_in)
+                # INFO:root:fill_in
+                # INFO:root:['[MASK]', 'california', 'missouri', 'florida']
+                # INFO:root:fill_in
+                # INFO:root:['[MASK]', 'georgia', 'arizona', 'new york']
+                # INFO:root:fill_in
+                # INFO:root:['[MASK]', 'delaware', 'texas', 'nevada']
+                # INFO:root:fill_in
+
                 fill_in = np.random.permutation(fill_in)
                 text = template[0] + pos_cname + template[1]
                 text = text.format(*fill_in)
+                logging.info('text')
+                logging.info(text)
                 ids.append(self.tokenizer.encode(text, max_length=512))
         mask_rep = self.get_mask_rep(ids)
 
