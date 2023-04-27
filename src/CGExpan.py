@@ -268,8 +268,8 @@ class CGExpan(object):
                 fill_in = np.random.permutation(fill_in)
                 text = template[0] + pos_cname + template[1]
                 text = text.format(*fill_in)
-                logging.info('text')
-                logging.info(text)
+                # logging.info('text')
+                # logging.info(text)
                 # INFO:root:text
                 # INFO:root:[MASK] , florida , texas , california or other states .
                 # INFO:root:text
@@ -282,8 +282,14 @@ class CGExpan(object):
                 # INFO:root:states such as [MASK] , texas , florida , and california .
                 ids.append(self.tokenizer.encode(text, max_length=512))
         mask_rep = self.get_mask_rep(ids)
-        logging.info('length')
-        logging.info(len(ids))
+        # logging.info('length')
+        # logging.info(len(ids))
+        # INFO:root:length
+        # INFO:root:18
+
+        logging.info('mask_rep')
+        logging.info(mask_rep)
+
         eid2mrr = ddict(float)
         for local_rep in mask_rep:
             indices = []
