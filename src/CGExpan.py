@@ -244,8 +244,13 @@ class CGExpan(object):
         global_idx_generator = self.rand_idx(len(current_set))
         local_idx_generator = self.rand_idx(len(current_set))
         global_scores = cos(self.means[[self.eid2idx[eid] for eid in current_set]], self.means)
-        logging.info('global_scores shape')
-        logging.info(global_scores.shape)
+        # logging.info('global_scores shape')
+        # logging.info(global_scores.shape)
+        # INFO:root:global_scores shape
+        # INFO:root:(3, 76048)
+        # INFO:root:global_scores shape
+        # INFO:root:(9, 76048)
+
         ids = []
         for _ in range(EXPANSION_SAMPLE_SIZE):
             for template in self.expansion_templates:
@@ -306,9 +311,12 @@ class CGExpan(object):
         #  [-0.23963006  0.18225236  0.08653576 ... -0.19262496  0.1368391
         #   -0.03403295]]
 
-
         eid2mrr = ddict(float)
         for local_rep in mask_rep:
+
+            # we first sample sev-
+            # eral entities from E, denoted as Es , and calculate
+            # the score for each candidate entity ei as cos
             indices = []
             for n in global_idx_generator:
                 if n not in indices:
@@ -373,7 +381,8 @@ class CGExpan(object):
             this_embs = np.vstack(this_embs)
             
             raw_local_scores = cos(local_rep[np.newaxis, :], this_embs)[0]
-
+            logging.info('shapes local_rep')
+            logging.info(f"{local_rep[np.newaxis, :].shape} ##  {this_embs.shape}")
             local_scores = np.zeros((500,))
             for i in range(500):
                 start_pos = this_entity_pos[i]
