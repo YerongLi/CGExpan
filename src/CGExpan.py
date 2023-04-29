@@ -314,7 +314,11 @@ class CGExpan(object):
                     indices.append(n)
                     if len(indices) == 3:
                         break
+            # Generate three keywords in the variable indices
+
             this_global_score = np.mean(global_scores[indices], axis=0)
+            logging.info('this_global_score.shape')
+            logging.info(this_global_score.shape)
             this_global_score_ranking = np.argsort(-this_global_score)
 
             this_keywords = [self.keywords[i] for i in this_global_score_ranking[:500]]
