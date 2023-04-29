@@ -244,7 +244,8 @@ class CGExpan(object):
         global_idx_generator = self.rand_idx(len(current_set))
         local_idx_generator = self.rand_idx(len(current_set))
         global_scores = cos(self.means[[self.eid2idx[eid] for eid in current_set]], self.means)
-
+        logging.info('global_scores shape')
+        logging.info(global_scores.shape)
         ids = []
         for _ in range(EXPANSION_SAMPLE_SIZE):
             for template in self.expansion_templates:
@@ -317,8 +318,14 @@ class CGExpan(object):
             # Generate three keywords in the variable indices
 
             this_global_score = np.mean(global_scores[indices], axis=0)
-            logging.info('this_global_score.shape')
-            logging.info(this_global_score.shape)
+
+            # logging.info('this_global_score.shape')
+            # logging.info(this_global_score.shape)
+            # INFO:root:this_global_score.shape
+            # INFO:root:(76048,)
+            # INFO:root:this_global_score.shape
+            # INFO:root:(76048,)
+
             this_global_score_ranking = np.argsort(-this_global_score)
 
             this_keywords = [self.keywords[i] for i in this_global_score_ranking[:500]]
