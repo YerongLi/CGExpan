@@ -374,8 +374,21 @@ class CGExpan(object):
                     local_scores[i] = np.mean(np.partition(raw_local_scores[start_pos:end_pos], -self.k)[-self.k:])
 
             scores = 5*np.log(local_scores) + np.log(this_global_score)
-            logging.info('shapes')
-            logging.info(local_scores.shape)
+            # logging.info('shapes')
+            # logging.info(local_scores.shape)
+            # INFO:root:shapes
+            # INFO:root:(500,)
+            # INFO:root:shapes
+            # INFO:root:(500,)
+            # INFO:root:shapes
+            # INFO:root:(500,)
+            # INFO:root:shapes
+            # INFO:root:(500,)
+            # INFO:root:shapes
+            # INFO:root:(500,)
+            # INFO:root:shapes
+            # INFO:root:(500,)
+
             # logging.info(this_global_score.shape)
             r = 0.
             for i in np.argsort(-scores):
@@ -439,6 +452,20 @@ class CGExpan(object):
         masks = masks.to('cuda')
         with torch.no_grad():
             batch_final_layer = self.maskedLM(ids, masks)[1][-1]
-            logging.info('shape of batch_final_layer')
-            logging.info(batch_final_layer.shape)
+            # logging.info('shape of batch_final_layer')
+            # logging.info(batch_final_layer.shape)
+            # INFO:root:shape of batch_final_layer
+            # INFO:root:torch.Size([6, 7, 768])
+            # INFO:root:shape of batch_final_layer
+            # INFO:root:torch.Size([6, 7, 768])
+            # INFO:root:shape of batch_final_layer
+            # INFO:root:torch.Size([6, 8, 768])
+            # INFO:root:shape of batch_final_layer
+            # INFO:root:torch.Size([6, 7, 768])
+            # INFO:root:shape of batch_final_layer
+            # INFO:root:torch.Size([6, 8, 768])
+            # INFO:root:shape of batch_final_layer
+            # INFO:root:torch.Size([6, 8, 768])
+            # INFO:root:shape of batch_final_layer
+            # INFO:root:torch.Size([6, 7, 768])
         return np.array([final_layer[idx].cpu().numpy() for final_layer, idx in zip(batch_final_layer, mask_pos)])
