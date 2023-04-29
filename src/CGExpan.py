@@ -376,7 +376,7 @@ class CGExpan(object):
             scores = 5*np.log(local_scores) + np.log(this_global_score)
             logging.info('shapes')
             logging.info(local_scores.shape)
-            logging.info(this_global_score.shape)
+            # logging.info(this_global_score.shape)
             r = 0.
             for i in np.argsort(-scores):
                 eid = this_keywords[i]
