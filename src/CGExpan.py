@@ -281,6 +281,7 @@ class CGExpan(object):
                 # INFO:root:text
                 # INFO:root:states such as [MASK] , texas , florida , and california .
                 ids.append(self.tokenizer.encode(text, max_length=512))
+        logging.info('ids')
         logging.info(ids)
         mask_rep = self.get_mask_rep(ids)
         # logging.info('length')
