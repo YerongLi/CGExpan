@@ -281,8 +281,8 @@ class CGExpan(object):
                 # INFO:root:text
                 # INFO:root:states such as [MASK] , texas , florida , and california .
                 ids.append(self.tokenizer.encode(text, max_length=512))
-        logging.info('ids')
-        logging.info(ids)
+        # logging.info('ids')
+        # logging.info(ids)
         mask_rep = self.get_mask_rep(ids)
         # logging.info('length')
         # logging.info(len(ids))
@@ -427,6 +427,7 @@ class CGExpan(object):
 
     def get_mask_rep(self, batch_ids):
         batch_max_length = max(len(ids) for ids in batch_ids)
+        # padding
         ids = torch.tensor([ids + [0 for _ in range(batch_max_length - len(ids))] for ids in batch_ids]).long()
         masks = (ids != 0).long()
         temp = (ids == self.tokenizer.mask_token_id).nonzero()
@@ -438,4 +439,6 @@ class CGExpan(object):
         masks = masks.to('cuda')
         with torch.no_grad():
             batch_final_layer = self.maskedLM(ids, masks)[1][-1]
+            logging.info('shape of batch_final_layer')
+            logging.info(batch_final_layer.shape)
         return np.array([final_layer[idx].cpu().numpy() for final_layer, idx in zip(batch_final_layer, mask_pos)])
